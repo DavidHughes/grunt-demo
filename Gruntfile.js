@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       js: {
         files: ['Gruntfile.js'],
         tasks: ['jshint']
-      }
+      },
       mdPress: {
         files: ['grunt-demo.md'],
         tasks: ['shell:mdPress']
