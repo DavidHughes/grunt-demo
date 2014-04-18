@@ -12,6 +12,16 @@ module.exports = function(grunt) {
         command: 'mdpress grunt-demo.md'
       }
     },
+    express: {
+      all: {
+        options: {
+          port: 8888,
+          hostname: 'localhost',
+          bases: ['grunt-demo'],
+          livereload: true
+        }
+      }
+    },
     watch: {
       js: {
         files: ['Gruntfile.js'],
@@ -26,7 +36,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['jshint', 'shell']);
+  grunt.registerTask('develop', ['express', 'watch']);
 };
