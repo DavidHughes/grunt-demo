@@ -27,6 +27,8 @@ module.exports = function(grunt) {
         }
       }
     },
+    // grunt-contrib-watch observes our files, choosing from the below tasks
+    // when the corresponding files are changed.
     watch: {
       js: {
         files: ['Gruntfile.js'],
