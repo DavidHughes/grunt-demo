@@ -1,8 +1,12 @@
 {
+  "comment": "package.json supplies meta-data about the project.",
   "name": "grunt-demo",
   "description": "A presentation/demo on what Grunt is and how it can help",
   "version": "0.1.0",
   "author": "David Hughes",
+
+  "comment": "These are the plugins that are made available to Grunt after an npm install.",
+  "comment": "npm install --save-dev <plugin-name>",
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-contrib-jshint": "~0.10.0",
