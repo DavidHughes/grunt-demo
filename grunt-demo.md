@@ -1,72 +1,106 @@
-# What is Grunt?
-
-Grunt is a JavaScript Task Runner.
+---
+title: Simplifying Web Performance
+---
+<style>
+h1, h2 {
+  text-align: center;
+}
+</style>
+# Optimisation with a Grunt
 
 ---
 
-# Okay...what is Grunt?
+## What are our performance bottlenecks?
 
-When I say task, what I mean is a transformation of or review of some files. This can include among many other possibilities:
-
- - JS code analysis (JSHint/Lint)
- - CSS & JS minification (taking out whitespace)
- - CSS & JS Aggregation (combine all our scripts/stylesheets)
- - Image optimisation
- - Sass compilation
+  1. Too many asset requests
+  2. Requests could be smaller
+  3. JS not standardised, errors ignored
 
 ---
 
-These are all essential tasks which give tangible improvements to our site's front-end performance & developer experience.
- - Less HTTP requests
- - Smaller files
- - JavaScript written to agreed standards
+## How can we fix these?
+
+  1. Aggregate:
+    - JS/CSS concatenation
+    - Spritesheets/data URIs
+  2. Optimise:
+    - JS/CSS minification
+    - Image compression
+  3. Standardise:
+    - JSHint our JS
+    - Unit tests
 
 ---
 
-INTRODUCING GRUNT
-
-Grunt is a Javascript based task runner. This means you can use Javascript to configure it to run a number of plugins written by open-source communities (or ourselves, if we need to!).
+# That's a lot of stuff
 
 ---
 
-Setup
-Grunt requires node.js & npm to be installed, this is available on Linux, OS X and Windows.
+<img style='margin: 0 auto; display: block;' alt='' src='https://raw.githubusercontent.com/DavidHughes/grunt-demo/master/grunt-logo.png' />
 
-npm install -g grunt-cli
+**Grunt** is an automated task runner that can improve our assets with minimal workflow impact
+
+---
+
+<img style='margin: 0 auto; display: block;' alt='TWEETDECK, JQUERY, BOOTSTRAP, SAUCELABS, MODERNIZR, WORDPRESS, OPERA' src='https://raw.githubusercontent.com/DavidHughes/grunt-demo/master/moodboard.png' />
+
+---
+
+...pretty much **every** major JavaScript project on GitHub
+
+---
+## Setup
+Grunt runs on nodejs, which is available cross platform
+
+    > npm install -g grunt-cli
 
 Done.
 
 ---
 
-So, what does this do?
+**So, what does this do?**
 
 grunt-cli needs two things to run Grunt:
-- Gruntfile.js - defines the tasks that can be run by Grunt
-- package.json - specifies the plugins that nodejs will use (including Grunt itself)
+<ul>
+  <li>[Gruntfile.js](https://github.com/DavidHughes/grunt-demo/blob/master/Gruntfile.js) - defines the tasks that can be run by Grunt</li>
+  <li>[package.json](https://github.com/DavidHughes/grunt-demo/blob/master/package.json) - specifies the plugins that nodejs will use (including Grunt itself)</li>
+</ul>
 
 ---
 
-cd sites/all/themes/custom/cruk_bbq
-npm install
-// Grunt & grunt plugins installed
-grunt
-// Grunt default task is run.
+<style>
+#step-10 code > .blockquote {
+  font-weight: bold;
+}
+</style>
+
+Already in use in our repo:
+
+    > cd docroot/sites/all/themes/custom/cruk_bbq
+    > npm install
+    # Grunt & grunt plugins installed
+    > grunt
+    # Grunt default task is run.
 
 ---
 
-A default task is executed when no task is specified. This means it's generally best to make it run the most common tasks:
-- Compass/Sass compilation
-- JSHint
-- JS minification
-- JS aggregation
-
-We've just done all of that with a quick 'grunt'. Sweet, no need to remember lots of commands. But you can if you want to.
+Running `grunt` before a commit is the only workflow change needed to get its benefits.
 
 ---
 
-"I don't want to keep typing grunt!!!11!11"
-
-Easily fixed. grunt-contrib-watch lets us define a task that can watch our files and, depending on what was changed, run relevant tasks.
+`grunt watch` can watch over your files and run needed tasks on that file.
 
  - Saved a JS file? JSHint will watch out for your missed semicolons.
- - Sass? That's already been compiled.
+ - Sass? That's being compiled right now.
+
+---
+
+## In short, Grunt:
+
+ - Improves our asset quality
+ - Easy to learn, with next to no workflow change
+ - Can be extended with external or custom plugins
+
+---
+
+# Any questions?
